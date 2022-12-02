@@ -38,7 +38,7 @@ class MyDropdownButtonState extends State<MyDropdownButton> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.clear == true) dropdownMenuItemVale = "";
+    if (widget.clear == true) dropdownMenuItemVale = widget.areas[0];
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       margin: const EdgeInsets.symmetric(vertical: 5),
