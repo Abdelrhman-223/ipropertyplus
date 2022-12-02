@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ipropertyplus.ipropertyplus">
+    package="com.example.ipropertyplus">
    <application
         android:label="ipropertyplus"
         android:name="${applicationName}"

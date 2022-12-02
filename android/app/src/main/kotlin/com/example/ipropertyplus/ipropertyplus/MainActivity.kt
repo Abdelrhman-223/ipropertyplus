@@ -1,4 +1,4 @@
-package com.example.ipropertyplus.ipropertyplus
+package com.example.ipropertyplus
 
 import io.flutter.embedding.android.FlutterActivity
 
