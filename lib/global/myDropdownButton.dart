@@ -18,7 +18,7 @@ String selectedArea = "",
     selectedPropertyType = "";
 
 class MyDropdownButtonState extends State<MyDropdownButton> {
-  late String dropdownMenuItemVale;
+  String? dropdownMenuItemVale;
   Color mainColor = const Color.fromRGBO(26, 55, 77, 1),
       supTextColor = const Color.fromRGBO(26, 55, 77, .5),
       fieldBackgroundColor = const Color.fromRGBO(224, 224, 229, 1),
@@ -51,7 +51,7 @@ class MyDropdownButtonState extends State<MyDropdownButton> {
         isDense: true,
         isExpanded: true,
         focusColor: supTextColor,
-        value: dropdownMenuItemVale,
+        value: (dropdownMenuItemVale == null)? widget.areas[0]: dropdownMenuItemVale,
         iconEnabledColor: mainColor,
         iconDisabledColor: supTextColor,
         dropdownColor: fieldBackgroundColor,

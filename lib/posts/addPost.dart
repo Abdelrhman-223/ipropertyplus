@@ -21,7 +21,7 @@ class AddPost extends StatefulWidget {
 bool clear = false, checkId = false, checkPostImg = true;
 
 class AddPostState extends State<AddPost> {
-  File postImg = File("assets/images/logo.png");
+  String postImg = "";
   String choosesArea = "",
       choosesPropertyStatue = "",
       choosesPropertyType = "",
@@ -98,7 +98,7 @@ class AddPostState extends State<AddPost> {
                 dynamic getImg =
                     await camImg.pickImage(source: ImageSource.camera);
                 setState(() {
-                  postImg = File(getImg.path);
+                  postImg = File(getImg.path).path;
                 });
               },
               onDoubleTap: () async {
@@ -106,7 +106,7 @@ class AddPostState extends State<AddPost> {
                 dynamic getImg =
                     await camImg.pickImage(source: ImageSource.gallery);
                 setState(() {
-                  postImg = File(getImg.path);
+                  postImg = File(getImg.path).path;
                 });
               },
               onLongPress: () {
@@ -122,7 +122,7 @@ class AddPostState extends State<AddPost> {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: (checkPostImg)
-                    ? Image.file(postImg)
+                    ? (postImg == "")?Image.asset("assets/images/logo.png"):Image.file(File(postImg))
                     : Icon(
                         Icons.add_photo_alternate_rounded,
                         color: mainColor,

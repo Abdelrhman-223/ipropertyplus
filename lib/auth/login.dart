@@ -141,14 +141,14 @@ class LoginState extends State<Login> {
                         sharedPreferencesUserData.setString("userPhoneNumber",
                             snapshot1.data?.docs[i]["userPhoneNumber"]);
                         sharedPreferencesUserData.setBool("signedUp", true);
+                        setState(() {
+                          checkEmail = true;
+                        });
                         // ignore: use_build_context_synchronously
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const MyHomePage()));
-                        setState(() {
-                          checkEmail = true;
-                        });
                       }
                       if (checkEmail == false &&
                           i == snapshot1.data!.docs.length - 1) {
